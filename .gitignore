@@ -1,0 +1,14 @@
+venv
+venv/
+venv/*
+*.pyc
+build/
+build
+dist
+dist/
+*egg*
+*.swp
+*.swm
+*.swn
+*.swa
+*.swo
