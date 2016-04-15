@@ -11,6 +11,10 @@ def watch():
     parser.add_argument('--language')
     args = parser.parse_args()
     
+    if args.language == '' or args.language == None:
+        print('Please specify a --language')
+        quit()
+
     try:
         while True:
             time.sleep(1)
@@ -25,6 +29,9 @@ def watch():
             this_file.close()
             if latest_hash != this_hash:
                 print('Detected change in: {}'.format(args.file))
-                PHPParser.parse(args.file)
+                
+                if args.language == 'php':
+                    PHPParser.parse(args.file)
+
     except KeyboardInterrupt:
         print('interrupted!')
