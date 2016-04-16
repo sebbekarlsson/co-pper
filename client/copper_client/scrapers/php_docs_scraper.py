@@ -14,6 +14,7 @@ class PHPDocsScraper(Scraper):
         soup = BeautifulSoup(r.text, 'html.parser')
         
         code = soup.find(class_='methodsynopsis dc-description')
+        code_description = soup.find(class_='dc-title').text
 
         if code is None:
             return None
@@ -25,15 +26,19 @@ class PHPDocsScraper(Scraper):
             params_parameters = []
 
             for param in params:
-                parameter_type = param.find(class_='type').text
-                parameter = param.find(class_='parameter').text
+                try:
+                    parameter_type = param.find(class_='type').text
+                    parameter = param.find(class_='parameter').text
+                except AttributeError:
+                    continue
 
                 params_parameters.append({'type': parameter_type, 'parameter': parameter})
 
             func = CodeFunction(
-                        type=code_type,
+                        return_type=code_type,
                         name=code_name,
-                        parameters=params_parameters
+                        parameters=params_parameters,
+                        description=code_description
                     )
 
-        return func.__dict__
+        return func

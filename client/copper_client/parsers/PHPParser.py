@@ -20,12 +20,15 @@ class PHPParser(Parser):
         <article>
             <h3>{line}</h3>
             <p>{name}({args}) - {type}</p>
+            <p>{desc}</p>
         </article>
         '''.format(
                 line=line,
-                name=docs['name'],
-                type=docs['type'],
-                args=['{}|{},'.format(par['type'], par['parameter']) for par in docs['parameters']])
+                name=docs.name,
+                type=docs.return_type,
+                args=['{}|{},'.format(par['type'], par['parameter']) for par in docs.parameters],
+                desc=docs.description
+                )
 
         return inf
 

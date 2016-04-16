@@ -3,22 +3,56 @@
 <body>
         <article>
             <h3>2</h3>
-            <p>file_get_contents(['string|$filename,', 'bool|$use_include_path,', 'resource|$context,', 'int|$offset,', 'int|$maxlen,']) - string</p>
+            <p>ob_start(['callable|$output_callback,', 'int|$chunk_size,', 'int|$flags,']) - bool</p>
+            <p>Turn on output buffering</p>
         </article>
         
         <article>
-            <h3>4</h3>
-            <p>empty(['mixed|$var,']) - bool</p>
+            <h3>3</h3>
+            <p>session_start(['array|$options,']) - bool</p>
+            <p>Start new or resume existing session</p>
         </article>
         
         <article>
-            <h3>6</h3>
-            <p>curl_init(['string|$url,']) - resource</p>
+            <h3>7</h3>
+            <p>error_reporting(['int|$level,']) - int</p>
+            <p>Sets which PHP errors are reported</p>
         </article>
         
         <article>
             <h3>8</h3>
-            <p>strpos(['string|$haystack,', 'mixed|$needle,', 'int|$offset,']) - mixed</p>
+            <p>ini_set(['string|$varname,', 'string|$newvalue,']) - string</p>
+            <p>Sets the value of a configuration option</p>
+        </article>
+        
+        <article>
+            <h3>84</h3>
+            <p>isset(['mixed|$var,', 'mixed|$...,']) - bool</p>
+            <p>Determine if a variable is set and is not NULL</p>
+        </article>
+        
+        <article>
+            <h3>84</h3>
+            <p>empty(['mixed|$var,']) - bool</p>
+            <p>Determine whether a variable is empty</p>
+        </article>
+        
+        <article>
+            <h3>85</h3>
+            <p>empty(['mixed|$var,']) - bool</p>
+            <p>Determine whether a variable is empty</p>
+        </article>
+        
+        <article>
+            <h3>90</h3>
+            <p>time([]) - int</p>
+            <p>Return current Unix timestamp</p>
+        </article>
+        
+        <article>
+            <h3>104</h3>
+            <p>htmlspecialchars(['string|$string,', 'int|$flags,', 'string|$encoding,', 'bool|$double_encode,']) - string</p>
+            <p>Convert special characters to HTML entities</p>
         </article>
         
 </body>
